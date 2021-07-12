@@ -127,8 +127,8 @@ class parser:
         toks = tokenpos.of_string(str)
         asserttokens(toks)
         vts = self.parse(toks)
-        res = [v.val for v, t in vts if t.eof()]
-        print "found %d valid results among %d partial parses" %(len(res), len(vts))
+        res = [v for v, t in vts if t.eof()]
+        print "xxx found %d valid results among %d partial parses" %(len(res), len(vts))
         return res
 
     def andthen(self, p2):
